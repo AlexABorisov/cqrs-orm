@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:cassandra="http://www.springframework.org/schema/data/cassandra"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+	    http://www.springframework.org/schema/context/spring-context.xsd
+	    http://www.springframework.org/schema/data/cassandra
+	http://www.springframework.org/schema/data/cassandra/spring-cassandra.xsd
+	    ">
+
+    <context:annotation-config/>
+    <context:component-scan base-package="com.cloud.database" />
+
+    <bean id="idGenerator" class="com.cloud.generator.IDGeneratorImpl"/>
+    <bean class="com.cloud.generator.IDGeneratorImpl"/>
+
+    <cassandra:cluster id="cassandraCluster" port="9042" >
+    </cassandra:cluster>
+
+    <cassandra:session id="cassandraSession" cluster-ref="cassandraCluster" keyspace-name="clouddb"  />
+
+    <cassandra:template id="cqlTemplate" />
+
+    <cassandra:converter/>
+
+    <cassandra:repositories base-package="com.cloud.database.changelog.repo"/>
+    <cassandra:mapping entity-base-packages="com.cloud.database.changelog" />
+
+    <cassandra:repositories base-package="com.cloud.database.metainfo"/>
+    <cassandra:mapping entity-base-packages="com.cloud.database.metainfo" />
+
+
+</beans>

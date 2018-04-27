@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="Room" type="Room"/>
+    <xs:element name="Flor" type="Flor"/>
+
+
+    <xs:complexType name="Room">
+        <xs:sequence>
+            <xs:element type="xs:int" name="id"/>
+            <xs:element type="xs:int" name="number"/>
+            <xs:element type="xs:int" name="x"/>
+            <xs:element type="xs:int" name="y"/>
+            <xs:element type="xs:int" name="w"/>
+            <xs:element type="xs:int" name="h"/>
+            <xs:element type="Flor" name="flor"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Flor">
+        <xs:sequence>
+            <xs:element type="xs:int" name="id"/>
+            <xs:element type="xs:int" name="number"/>
+            <xs:element type="xs:int" name="x"/>
+            <xs:element type="xs:int" name="y"/>
+            <xs:element type="xs:int" name="w"/>
+            <xs:element type="xs:int" name="h"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

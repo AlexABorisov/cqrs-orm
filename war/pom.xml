@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>cloud-system</groupId>
+        <version>1.0</version>
+        <artifactId>project</artifactId>
+    </parent>
+
+    <groupId>com.cloud.database.server</groupId>
+    <artifactId>database-web-module</artifactId>
+    <version>0.1</version>
+    <packaging>war</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.cloud.database</groupId>
+            <artifactId>database-api</artifactId>
+            <version>0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.cloud.database.server</groupId>
+            <artifactId>database-impl</artifactId>
+            <version>0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>cassandra-utils</groupId>
+            <artifactId>cassandra-utils</artifactId>
+            <version>0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.cloud.database</groupId>
+            <artifactId>database-generator</artifactId>
+            <version>0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.cloud.database.server</groupId>
+            <artifactId>database-web</artifactId>
+            <version>0.1</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.4</version>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
